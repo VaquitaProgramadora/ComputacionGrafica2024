@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a328b1d7-1bb5-4301-90ac-c3ad6bd88d5a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/My First HTML/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/My First HTML/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/My First HTML/src/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/My First HTML/src/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +24,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Merging main&quot;
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;
   }
 }</component>
   <component name="SharedIndexes">
