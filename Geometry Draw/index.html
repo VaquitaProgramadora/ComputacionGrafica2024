@@ -29,7 +29,7 @@
                 <a class="navbar-brand" style="color: white;" href="#">Geometry 3D</a>
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Author(S)
+                    Vaquita Rios
                 </button>
 
                 <!-- Modal -->
@@ -43,7 +43,7 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                Kelly Daniella Marin Montealegre - 1140149
+                                Luis Miguel Echeverri Rios
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -68,28 +68,28 @@
                             <form action=""> <!-- Punto Final - Punto Inicial = Vector -->
                                 <label class="form-label" for="">Punto A (Punto Inicial)</label>
                                 <span>(</span>
-                                    <input style="width: 10%;" type="number" name="puntoAX" id="puntoAX" placeholder="X">
+                                    <input style="width: 10%;" type="number" name="puntoAX_vector" id="puntoAX_vector" placeholder="X">
                                 <span>,</span>
-                                    <input style="width: 10%;" type="number" name="puntoAY" id="puntoAY" placeholder="Y">
+                                    <input style="width: 10%;" type="number" name="puntoAY_vector" id="puntoAY_vector" placeholder="Y">
                                 <span>,</span>
-                                    <input style="width: 10%;" type="number" name="puntoAZ" id="puntoAZ" placeholder="Z">
+                                    <input style="width: 10%;" type="number" name="puntoAZ_vector" id="puntoAZ_vector" placeholder="Z">
                                 <span>)</span>
                                 <br><br>
                     
                                 <label class="form-label" for="">Punto B (Punto Final)</label>
                                 <span>(</span>
-                                    <input style="width: 10%;" type="number" name="puntoBX" id="puntoBX" placeholder="X">
+                                    <input style="width: 10%;" type="number" name="puntoBX_vector" id="puntoBX_vector" placeholder="X">
                                 <span>,</span>
-                                    <input style="width: 10%;" type="number" name="puntoBY" id="puntoBY" placeholder="Y">
+                                    <input style="width: 10%;" type="number" name="puntoBY_vector" id="puntoBY_vector" placeholder="Y">
                                 <span>,</span>
-                                    <input style="width: 10%;" type="number" name="puntoBZ" id="puntoBZ" placeholder="Z">
+                                    <input style="width: 10%;" type="number" name="puntoBZ_vector" id="puntoBZ_vector" placeholder="Z">
                                 <span>)</span>
                                 <br><br>
                                 <div class="d-grid gap-2">
                                     <button onclick="vector()" type="button" class="btn btn-primary">Calcular</button>
                                 </div>
                                 <br>
-                                <span id="result">Resultado...</span>
+                                <span id="result_vector">Resultado...</span>
                             </form>
                         </div>
                     </div>
@@ -99,6 +99,32 @@
                             Suma De Vectores
                         </div>
                         <div class="card-body">
+                            <form action=""> <!-- Punto Final - Punto Inicial = Vector -->
+                                <label class="form-label" for="">Punto A (Punto Inicial)</label>
+                                <span>(</span>
+                                    <input style="width: 10%;" type="number" name="puntoAX_suma" id="puntoAX_suma" placeholder="X">
+                                <span>,</span>
+                                    <input style="width: 10%;" type="number" name="puntoAY_suma" id="puntoAY_suma" placeholder="Y">
+                                <span>,</span>
+                                    <input style="width: 10%;" type="number" name="puntoAZ_suma" id="puntoAZ_suma" placeholder="Z">
+                                <span>)</span>
+                                <br><br>
+                    
+                                <label class="form-label" for="">Punto B (Punto Final)</label>
+                                <span>(</span>
+                                    <input style="width: 10%;" type="number" name="puntoBX_suma" id="puntoBX_suma" placeholder="X">
+                                <span>,</span>
+                                    <input style="width: 10%;" type="number" name="puntoBY_suma" id="puntoBY_suma" placeholder="Y">
+                                <span>,</span>
+                                    <input style="width: 10%;" type="number" name="puntoBZ_suma" id="puntoBZ_suma" placeholder="Z">
+                                <span>)</span>
+                                <br><br>
+                                <div class="d-grid gap-2">
+                                    <button onclick="suma()" type="button" class="btn btn-primary">Calcular</button>
+                                </div>
+                                <br>
+                                <span id="result_suma">Resultado...</span>
+                            </form>
                         </div>
                     </div>
                     <br>
@@ -107,6 +133,32 @@
                             Producto Escalar
                         </div>
                         <div class="card-body">
+                            <form action=""> <!-- Punto Final - Punto Inicial = Vector -->
+                                <label class="form-label" for="">Punto A (Punto Inicial)</label>
+                                <span>(</span>
+                                    <input style="width: 10%;" type="number" name="puntoAX_producto" id="puntoAX_producto" placeholder="X">
+                                <span>,</span>
+                                    <input style="width: 10%;" type="number" name="puntoAY_producto" id="puntoAY_producto" placeholder="Y">
+                                <span>,</span>
+                                    <input style="width: 10%;" type="number" name="puntoAZ_producto" id="puntoAZ_producto" placeholder="Z">
+                                <span>)</span>
+                                <br><br>
+                    
+                                <label class="form-label" for="">Punto B (Punto Final)</label>
+                                <span>(</span>
+                                    <input style="width: 10%;" type="number" name="puntoBX_producto" id="puntoBX_producto" placeholder="X">
+                                <span>,</span>
+                                    <input style="width: 10%;" type="number" name="puntoBY_producto" id="puntoBY_producto" placeholder="Y">
+                                <span>,</span>
+                                    <input style="width: 10%;" type="number" name="puntoBZ_producto" id="puntoBZ_producto" placeholder="Z">
+                                <span>)</span>
+                                <br><br>
+                                <div class="d-grid gap-2">
+                                    <button onclick="producto()" type="button" class="btn btn-primary">Calcular</button>
+                                </div>
+                                <br>
+                                <span id="result_producto">Resultado...</span>
+                            </form>
                         </div>
                     </div>
                     <br>
@@ -115,6 +167,23 @@
                             Magnitud Vector
                         </div>
                         <div class="card-body">
+                            <form action=""> <!-- Punto Final - Punto Inicial = Vector -->
+                                <label class="form-label" for="">Punto A (Punto Inicial)</label>
+                                <span>(</span>
+                                    <input style="width: 10%;" type="number" name="puntoAX_magnitud" id="puntoAX_magnitud" placeholder="X">
+                                <span>,</span>
+                                    <input style="width: 10%;" type="number" name="puntoAY_magnitud" id="puntoAY_magnitud" placeholder="Y">
+                                <span>,</span>
+                                    <input style="width: 10%;" type="number" name="puntoAZ_magnitud" id="puntoAZ_magnitud" placeholder="Z">
+                                <span>)</span>
+                                <br><br>
+                                                 
+                                <div class="d-grid gap-2">
+                                    <button onclick="magnitud()" type="button" class="btn btn-primary">Calcular</button>
+                                </div>
+                                <br>
+                                <span id="result_magnitud">Resultado...</span>
+                            </form>
                         </div>
                     </div>
 
