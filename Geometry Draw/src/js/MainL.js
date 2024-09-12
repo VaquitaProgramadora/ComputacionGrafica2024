@@ -34,9 +34,20 @@ function startScene(){
 
     //creacion de un cubo
     const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-    const material = new THREE.MeshBasicMaterial( { color: 0x0191970} );  //MeshDepthMaterial
+    const material = new THREE.MeshToonMaterial( { color: 0x023a3d, depthTest: true, depthWrite: true} );  //MeshDepthMaterial
     const cube = new THREE.Mesh( geometry, material );
     scene.add( cube );
+
+    //creacion de una esfera
+    const geometrySphere = new THREE.SphereGeometry( 2, 8, 8 ); 
+    const materialSphere = new THREE.MeshToonMaterial( { color: 0x023a3d, depthTest: true, depthWrite: true} );
+    const sphere = new THREE.Mesh( geometrySphere, materialSphere );
+    scene.add( sphere );
+
+    const light = new THREE.AmbientLight( 0x404040, 5); // soft white light
+    scene.add( light );
+    const directionalLight = new THREE.DirectionalLight( 0xffffff, 0.5 );
+    scene.add( directionalLight );
 
     camera.position.z = 5;
     animate();
