@@ -22,7 +22,7 @@ function startScene(){
 
     //orbit controls
     controls = new THREE.OrbitControls(camera, renderer.domElement);
-    camera.position.set(0,0,0);
+    camera.position.set(0,5,10);
     controls.update();
 
     //grid Helper
@@ -32,21 +32,12 @@ function startScene(){
     const gridHelper = new THREE.GridHelper( size, divisions, new THREE.Color(0xffffff), new THREE.Color(0x023a3d) );
     scene.add( gridHelper );
 
-    //creacion de un cubo
-    const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-    const material = new THREE.MeshToonMaterial( { color: 0x023a3d, depthTest: true, depthWrite: true} );  //MeshDepthMaterial
-    const cube = new THREE.Mesh( geometry, material );
-    scene.add( cube );
-
-    //creacion de una esfera
-    const geometrySphere = new THREE.SphereGeometry( 2, 8, 8 ); 
-    const materialSphere = new THREE.MeshToonMaterial( { color: 0x023a3d, depthTest: true, depthWrite: true} );
-    const sphere = new THREE.Mesh( geometrySphere, materialSphere );
-    scene.add( sphere );
+    createGeometry ('torus');
+   
 
     const light = new THREE.AmbientLight( 0x404040, 5); // soft white light
     scene.add( light );
-    const directionalLight = new THREE.DirectionalLight( 0xffffff, 0.5 );
+    const directionalLight = new THREE.DirectionalLight( 0xffffff, 0.5 );  
     scene.add( directionalLight );
 
     camera.position.z = 5;
@@ -68,3 +59,45 @@ function onWindowResize(){
     renderer.setSize( window.innerWidth, window.innerHeight );
 
 }
+
+function createGeometry (geometryDraw) 
+{ var geometryfigure = null;
+    switch(geometryDraw) {
+        case 'box':
+    //creacion de un cubo
+    geometryfigure = new THREE.BoxGeometry( 1, 1, 1 );
+            break;
+
+        case 'torus':
+        geometryfigure = new THREE.TorusGeometry( 2, 1, 16, 100 );
+            break;
+
+        case 'cone':
+        geometryfigure = new THREE.ConeGeometry( 5, 20, 32 );
+            break;   
+    }
+    const material = new THREE.MeshToonMaterial( { color: 0x023a3d, depthTest: true, depthWrite: true} ); 
+    const objectDraw = new THREE.Mesh( geometryfigure, material );
+    scene.add (objectDraw);
+
+}
+
+//creacion de un cubo
+// const geometry = new THREE.BoxGeometry( 1, 1, 1 );
+//const material = new THREE.MeshToonMaterial( { color: 0x023a3d, depthTest: true, depthWrite: true} );  //MeshDepthMaterial
+//const cube = new THREE.Mesh( geometry, material );
+//scene.add( cube );
+
+ /*//creacion de una esfera cute uwu !!
+    const geometrySphere = new THREE.SphereGeometry( 2, 8, 8 ); 
+    const materialSphere = new THREE.MeshToonMaterial( { color: 0x023a3d, depthTest: true, depthWrite: true} );
+    const sphere = new THREE.Mesh( geometrySphere, materialSphere );
+    scene.add( sphere ); */
+
+//creacion de un vector
+// const dir= new THREE.Vector3(0,1,0);
+//const origin = new THREE.Vector3(0,0,0);
+//const length = 1;
+// const hex = 0x023a3d;
+// const arrowHelper = new THREE.ArrowHelper(dir, origin, length, hex);
+// scene.add(arrowHelper);

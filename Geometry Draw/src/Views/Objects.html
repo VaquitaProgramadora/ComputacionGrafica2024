@@ -21,8 +21,19 @@
 <body onload="startScene()">
 
     <div id="canvas-container">
+    <div style="z-index: 9;">  
+
+        <button onclick="createGeometry('torus')">Torus</button>
+        <button onclick="createGeometry('box')">Box</button>
+        <button onclick="createGeometry('cone')">Cone</button></div>
+   
+    </div>
+</div>
+
+    <div id="canvas-container">
         <canvas id="app"></canvas>
     </div>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
