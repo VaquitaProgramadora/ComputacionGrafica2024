@@ -32,16 +32,21 @@ function startScene(){
     const gridHelper = new THREE.GridHelper( size, divisions, new THREE.Color(0xffffff), new THREE.Color(0x023a3d) );
     scene.add( gridHelper );
 
-    createGeometry ('torus');
-   
-
-    const light = new THREE.AmbientLight( 0x404040, 5); // soft white light
-    scene.add( light );
-    const directionalLight = new THREE.DirectionalLight( 0xffffff, 0.5 );  
-    scene.add( directionalLight );
-
+    
     camera.position.z = 5;
     animate();
+
+    //Light 
+    const light = new THREE.AmbientLight( 0x404040, 5); // soft white light
+    scene.add( light );
+
+    const pointLight = new THREE.PointLight( 0xff0000, 1, 100 );
+    pointLight.position.set( 10, 10, 10 );
+    scene.add( pointLight );
+
+    const sphereSize = 1;
+    const pointLightHelper = new THREE.PointLightHelper( pointLight, sphereSize );
+    scene.add( pointLightHelper );
 }
 
 function animate(){
@@ -63,24 +68,54 @@ function onWindowResize(){
 function createGeometry (geometryDraw) 
 { var geometryfigure = null;
     switch(geometryDraw) {
+
         case 'box':
     //creacion de un cubo
-    geometryfigure = new THREE.BoxGeometry( 1, 1, 1 );
+   let an = parseFloat(document.getElementById("anchura").value);
+   let pr = parseFloat(document.getElementById("profundidad").value);
+   let al = parseFloat(document.getElementById("altura").value);
+    geometryfigure = new THREE.BoxGeometry( an, pr, al );
             break;
 
         case 'torus':
-        geometryfigure = new THREE.TorusGeometry( 2, 1, 16, 100 );
+        let rt = parseFloat(document.getElementById("radio torus").value);
+        let tt = parseFloat(document.getElementById("tubo torus").value);
+        let sg = parseFloat(document.getElementById("segmentos radiales").value);
+        let stt = parseFloat(document.getElementById("segmentos tubulares torus").value);
+        geometryfigure = new THREE.TorusGeometry( rt, tt, sg, stt );
+
             break;
 
         case 'cone':
-        geometryfigure = new THREE.ConeGeometry( 5, 20, 32 );
+            let rc = parseFloat(document.getElementById("radio cono").value);
+            let ac = parseFloat(document.getElementById("altura cono").value);
+            let sr = parseFloat(document.getElementById("segmentos radiales cono").value);
+        geometryfigure = new THREE.ConeGeometry( rc, ac, sr );
             break;   
     }
-    const material = new THREE.MeshToonMaterial( { color: 0x023a3d, depthTest: true, depthWrite: true} ); 
-    const objectDraw = new THREE.Mesh( geometryfigure, material );
-    scene.add (objectDraw);
+     var randomColor = +('0x' + Math.floor(Math.random()*16777215).toString(16));
+    const material = new THREE.MeshStandardMaterial({color: randomColor,transparent: false, opacity: 0.5, wireframe: false, roughness: 0.5, metalness: 0.5});
+    const objectDraw = new THREE.Mesh(geometryfigure, material);
+    scene.add(objectDraw);
 
 }
+
+function deleteGeometry()
+{
+    scene.remove(scene.children[scene.children.length - 1]);
+}
+
+function showinput(inputN)
+{
+    var input = document.getElementById(inputN);
+    if (input.style.display === "none") {
+        input.style.display = "block";
+    } else {
+        input.style.display = "none";
+    }
+}
+
+
 
 //creacion de un cubo
 // const geometry = new THREE.BoxGeometry( 1, 1, 1 );
@@ -101,3 +136,6 @@ function createGeometry (geometryDraw)
 // const hex = 0x023a3d;
 // const arrowHelper = new THREE.ArrowHelper(dir, origin, length, hex);
 // scene.add(arrowHelper);
+
+
+// para la otra semana, habilitar que en el torus se permita agregar las propiedades  osea el tamaño, debe ´preguntar para que el usuario lo ponga, igual en el caso de la caja y en el caso del cone con las diapositivas  de creación de figuras. 

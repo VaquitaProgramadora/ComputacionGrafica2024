@@ -23,14 +23,44 @@
     <div id="canvas-container">
     <div style="z-index: 9;">  
 
-        <button onclick="createGeometry('torus')">Torus</button>
-        <button onclick="createGeometry('box')">Box</button>
-        <button onclick="createGeometry('cone')">Cone</button></div>
-   
+
+
+        <button onclick="showinput('torusdex')" type="button" class="btn btn-dark" >Torus</button>
+        <button onclick="showinput('boxdex')" type="button" class="btn btn-dark" >Box</button>
+        <button onclick="showinput('conedex')"type="button" class="btn btn-dark" >Cone</button></div>
+
     </div>
+
+    <div id="torusdex" style="display: none;">
+        <input id="radio torus" type="number" placeholder="RADIO">
+        <input id="tubo torus" type="number" placeholder="TUBO">
+        <input id="segmentos radiales" type="number" placeholder="SEGMENTOS RADIALES">
+        <input id="segmentos tubulares torus" type="number" placeholder="SEGMENTOS TUBULARES">
+        <button onclick="deleteGeometry(),createGeometry('torus')" type="button" class="btn btn-dark" >Crear</button>
+
+    </div>
+
+    <div id="boxdex" style="display: none;">
+        <input id="anchura" type="number" placeholder="ANCHURA">
+        <input id="profundidad" type="number" placeholder="PROFUNDIDAD">
+        <input id="altura" type="number" placeholder="ALTURA">
+        <button onclick="deleteGeometry(),createGeometry('box')" type="button" class="btn btn-dark" >Crear</button>
+    </div>
+
+ 
+    <div id="conedex" style="display: none;">
+        <input id="radio cono" type="number" placeholder="RADIO">
+        <input id="altura cono" type="number" placeholder="ALTURA">
+        <input id="segmentos radiales cono" type="number" placeholder="SEGMENTOS RADIALES">
+        <button onclick="deleteGeometry(),createGeometry('cone')" type="button" class="btn btn-dark" >Crear</button>
+    </div>
+       
+    
 </div>
 
     <div id="canvas-container">
+
+        
         <canvas id="app"></canvas>
     </div>
 
